@@ -2,7 +2,7 @@ from botting_nigga import ask, append_interaction_to_chat_log
 from twilio.twiml.messaging_response import MessagingResponse
 from flask import Flask, request, session
 app = Flask(__name__)
-# if for some reason your conversation with Jabe gets weird, change the secret key
+# if for some reason your conversation with Botting Nigga gets weird, change the secret key
 app.config['SECRET_KEY'] = '0.848436602531039'
 
 

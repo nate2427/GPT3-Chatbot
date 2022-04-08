@@ -1,6 +1,4 @@
 from dotenv import load_dotenv
-from random import choice
-from flask import Flask, request
 import os
 import openai
 load_dotenv()
@@ -19,6 +17,7 @@ def ask(question, chat_log=None):
         engine="davinci",
         temperature=0.8,
         max_tokens=150,
+        prompt=prompt_text,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0.3,
@@ -31,4 +30,4 @@ def ask(question, chat_log=None):
 def append_interaction_to_chat_log(question, answer, chat_log=None):
     if chat_log is None:
         chat_log = session_prompt
-    return f'{chat_log}‘{restart_sequence} {question}{start_sequence}{answer}'
+    return f'{chat_log}{restart_sequence} {question}{start_sequence}{answer}'
