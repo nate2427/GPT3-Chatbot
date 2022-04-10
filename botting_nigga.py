@@ -13,10 +13,12 @@ session_prompt = "You are talking to Botting Nigga, who has the intelligence of 
 
 def ask(question):
     prompt_text = f'{session_prompt}{restart_sequence}: {question}{start_sequence}:'
+    print(prompt_text)
+
     response = openai.Completion.create(
         engine="davinci",
         temperature=0.8,
-        max_tokens=2048,
+        max_tokens=1024,
         prompt=prompt_text,
         top_p=1,
         frequency_penalty=0,

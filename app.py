@@ -11,6 +11,7 @@ def bottn_nigga():
     incoming_msg = request.values['Body']
     # chat_log = session.get('chat_log')
     answer = ask(incoming_msg)
+
     # session['chat_log'] = append_interaction_to_chat_log(incoming_msg, answer,
     #                                                      chat_log)
     msg = MessagingResponse()
