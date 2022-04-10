@@ -3,14 +3,14 @@ from twilio.twiml.messaging_response import MessagingResponse
 from flask import Flask, request, session
 app = Flask(__name__)
 # if for some reason your conversation with Botting Nigga gets weird, change the secret key
-app.config['SECRET_KEY'] = '0.848436602531039'
+app.config['SECRET_KEY'] = '0.848402531039'
 
 
 @app.route('/bottn_nigga', methods=['POST'])
 def bottn_nigga():
     incoming_msg = request.values['Body']
     chat_log = session.get('chat_log')
-    answer = ask(incoming_msg)
+    answer = ask(incoming_msg, chat_log)
 
     session['chat_log'] = append_interaction_to_chat_log(incoming_msg, answer,
                                                          chat_log)
