@@ -3,7 +3,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 from flask import Flask, request, session
 app = Flask(__name__)
 # if for some reason your conversation with Botting Nigga gets weird, change the secret key
-app.config['SECRET_KEY'] = '245770.848dfgb2531039'
+app.config['SECRET_KEY'] = '24005770.848dfgb2531039'
 
 
 @app.route('/bottn_nigga', methods=['POST'])
