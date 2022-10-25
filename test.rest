@@ -1,6 +1,6 @@
-POST http://127.0.0.1:5000/bottn_nigga?Body=What really is the truth about love? HTTP/1.1
-content-type: multipart/form-data
+POST http://127.0.0.1:5000/bottn_nigga HTTP/1.1
+content-type: application/json
 
 {
-    "Body": "how many dimensions are there?"
+    "msg": "how many dimensions are there?"
 }
