@@ -52,7 +52,19 @@ def convert_training_questions_to_convo(questions):
     convo = []
     for question in questions:
         convo.append({
-            'human': question['question'],
+            'human': question['question']
+        })
+        convo.append({
             'bot': question['answer']
         })
     return convo
+
+def save_entry_into_full_history(entry, personType):
+    collection =  get_db_collection('convos')
+    collection.update_one({
+        "full_history": {
+            '$exists': True
+        }
+    },
+    { "$push": { "full_history" : {personType: entry }} })
+
